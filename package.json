@@ -1,0 +1,25 @@
+{
+  "name": "resolver-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:local": "hardhat ignition deploy ./ignition/modules/AttesterAllowlistResolverFactory.ts --network localhost",
+    "deploy:sepolia": "hardhat ignition deploy ./ignition/modules/AttesterAllowlistResolverFactory.ts --network sepolia",
+    "deploy:baseSepolia": "hardhat ignition deploy ./ignition/modules/AttesterAllowlistResolverFactory.ts --network baseSepolia",
+    "deploy:optimismSepolia": "hardhat ignition deploy ./ignition/modules/AttesterAllowlistResolverFactory.ts --network optimismSepolia",
+    "deploy:arbitrumSepolia": "hardhat ignition deploy ./ignition/modules/AttesterAllowlistResolverFactory.ts --network arbitrumSepolia",
+    "deploy:arbitrumGoerli": "hardhat ignition deploy ./ignition/modules/AttesterAllowlistResolverFactory.ts --network arbitrumGoerli"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
+    "hardhat": "^2.22.3"
+  },
+  "dependencies": {
+    "@ethereum-attestation-service/eas-contracts": "^1.4.1"
+  }
+}
