@@ -10,13 +10,13 @@ contract AttesterAllowlistResolverFactory {
 
     event ResolverDeployed(address indexed owner, address indexed resolverAddress);
 
-    function createAttesterAllowlistResolver(IEAS eas, uint256 _endTimestamp) public {
-        AttesterAllowlistResolver newResolver = new AttesterAllowlistResolver(eas, _endTimestamp);
+    function createAttesterAllowlistResolver(IEAS eas) public {
+        AttesterAllowlistResolver newResolver = new AttesterAllowlistResolver(eas, msg.sender);
         deployedResolvers[msg.sender].push(address(newResolver));
         emit ResolverDeployed(msg.sender, address(newResolver));
     }
 
-    function getDeployedResolvers() public view returns (address[] memory) {
-        return deployedResolvers;
+    function getDeployedResolvers(address deployer) public view returns (address[] memory) {
+        return deployedResolvers[deployer];
     }
 }
